@@ -1,0 +1,95 @@
+@import "colors";
+@import "fonts";
+@import "resolution";
+
+@mixin Padding-height($top, $bottom:0){
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+@mixin Margin-Height($top, $bottom:0){
+  margin-top: $top;
+  margin-bottom: $bottom;
+}
+@mixin Margin-Width($top, $bottom:0){
+  margin-left: $top;
+  margin-right: $bottom;
+}
+@mixin Font($size:0.87rem,$name:$font-text){
+  font: $size $name ;
+}
+.color-text{
+  color: $grey-light;
+}
+.color-title{
+  color: $grey-dark;
+}
+.color-blue{
+  color: $blue;
+}
+.bg-light{
+  background:  lighten( $grey-light, 55% );
+}
+.bold{
+  font-weight: bold;
+}
+hr{
+  border: $blue 2px solid;
+}
+.container {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+*{
+  box-sizing: border-box;
+  font-family: $font-title;
+}
+h1{
+  @include Font(2rem,$font-title);
+  @extend .color-title;
+  font-weight:600;
+}
+h3{
+  @include Font(1.5rem,$font-text);
+  @extend .color-title;
+}
+p{
+  @include Font(1rem,$font-text);
+  @extend .color-text;
+  line-height: 1.5;
+}
+.font-title{
+}
+.section{
+  @include Padding-height(2%,2%);
+  &__a{
+    @extend .color-blue;
+    text-decoration: none;
+  }
+  &__span{
+    @extend .color-text;
+  }
+  .new{
+    padding: 24px;
+  }
+  .row{
+    .bg-img{
+      background-image: url('../images/design.google_library_scroll_share_1.jpg');
+      background-size: cover;
+    }
+  }
+}
+.header-nav{
+  @include Margin-Height(20px,20px);
+  &__item{
+    font-weight: 500;
+    display: inline-block;
+    list-style: none;
+    color: $grey-dark;
+    @include Margin-Width(20px,20px);
+    @include Padding-height(0,14px);
+  }
+  &__item:hover{
+    border-bottom: 3px lighten( $grey-light, 50% ) solid;
+  }
+}

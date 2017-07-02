@@ -1,0 +1,33 @@
+$font-text: 'Roboto', sans-serif;
+$font-title: 'Open Sans', sans-serif;
+
+$floats: (
+  right: right,
+  left: left
+);
+$align: (
+  right: right,
+  left: left,
+  center: center,
+  justify: justify
+);
+$text-transform: (
+uppercase: uppercase,
+lowercase:lowercase,
+capitalize: capitalize
+);
+@each $name-float, $itemfloat in $floats {
+    .float-#{$name-float} {
+        float: $itemfloat;
+    }
+}
+@each $name-align, $itemalign in $align {
+    .text-#{$name-align} {
+        text-align: $itemalign;
+    }
+}
+@each $name-text, $itemtransform in $text-transform {
+    .text-#{$name-text} {
+        text-transform: $itemtransform;
+    }
+}
