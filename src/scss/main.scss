@@ -53,6 +53,9 @@ h3{
   @include Font(1.5rem,$font-text);
   @extend .color-title;
 }
+h4{
+  @extend .color-title;
+}
 p{
   @include Font(1rem,$font-text);
   @extend .color-text;
@@ -72,11 +75,8 @@ p{
   .new{
     padding: 24px;
   }
-  .row{
-    .bg-img{
-      background-image: url('../images/design.google_library_scroll_share_1.jpg');
-      background-size: cover;
-    }
+  .v-middle{
+    vertical-align: middle;
   }
 }
 .header-nav{
@@ -91,5 +91,25 @@ p{
   }
   &__item:hover{
     border-bottom: 3px lighten( $grey-light, 50% ) solid;
+  }
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+footer{
+  ul{
+    li{
+      list-style: none;
+    }
+  }
+  a{
+    @extend .color-text;
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  @media (max-width: 768px) {
+    display: none;
   }
 }
